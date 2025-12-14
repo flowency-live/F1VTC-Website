@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
+
+/* F1ValleyTransfers Design System
+   Aesthetic: Elite / Tech / Motorsport
+   Dark UI, minimal, engineering-firm precision
+*/
+
+@layer base {
+  :root {
+    /* Carbon Black - Primary background */
+    --background: 240 10% 6%;
+    --foreground: 217 8% 76%;
+
+    /* Slate Grey - Card/panel surfaces */
+    --card: 220 10% 18%;
+    --card-foreground: 217 8% 76%;
+
+    --popover: 220 10% 18%;
+    --popover-foreground: 217 8% 76%;
+
+    /* Steel Blue - CTA Accent */
+    --primary: 214 42% 39%;
+    --primary-foreground: 210 20% 97%;
+
+    /* Slate surfaces */
+    --secondary: 220 10% 14%;
+    --secondary-foreground: 217 8% 76%;
+
+    --muted: 220 8% 20%;
+    --muted-foreground: 217 8% 55%;
+
+    --accent: 220 10% 14%;
+    --accent-foreground: 217 8% 76%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 97%;
+
+    --border: 220 8% 22%;
+    --input: 220 8% 22%;
+    --ring: 214 42% 39%;
+
+    --radius: 0.25rem;
+
+    /* Platinum text color */
+    --platinum: 217 8% 76%;
+    
+    /* Ice White for headings */
+    --heading: 210 20% 97%;
+
+    --sidebar-background: 240 10% 6%;
+    --sidebar-foreground: 217 8% 76%;
+    --sidebar-primary: 214 42% 39%;
+    --sidebar-primary-foreground: 210 20% 97%;
+    --sidebar-accent: 220 10% 14%;
+    --sidebar-accent-foreground: 217 8% 76%;
+    --sidebar-border: 220 8% 22%;
+    --sidebar-ring: 214 42% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-heading font-semibold tracking-tight;
+    color: hsl(var(--heading));
+  }
+}
+
+@layer utilities {
+  .text-platinum {
+    color: hsl(var(--platinum));
+  }
+  
+  .text-heading {
+    color: hsl(var(--heading));
+  }
+
+  .border-subtle {
+    border-color: hsl(var(--border));
+  }
+}
