@@ -8,8 +8,8 @@ export default function HeroSection() {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1494783367193-149034c05e8f?auto=format&fit=crop&w=2000&q=80"
-          alt="Highway light trails at night"
+          src="/images/hero-light-trails.png"
+          alt="Motorway light trails at night"
           fill
           className="object-cover object-center"
           priority
