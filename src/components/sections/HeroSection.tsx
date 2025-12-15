@@ -1,21 +1,27 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16">
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(hsl(var(--border)) 1px, transparent 1px),
-                            linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
+    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1494783367193-149034c05e8f?auto=format&fit=crop&w=2000&q=80"
+          alt="Highway light trails at night"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-background/80" />
+        {/* Gradient fade to solid at bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+      </div>
 
       {/* Steel Blue accent line */}
-      <div className="absolute top-16 left-0 w-1 h-32 bg-primary" />
+      <div className="absolute top-16 left-0 w-1 h-32 bg-primary z-10" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl">
@@ -69,7 +75,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 }

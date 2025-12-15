@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function FleetSection() {
   return (
     <section id="fleet" className="py-24 border-t border-border">
@@ -19,10 +21,15 @@ export default function FleetSection() {
             </p>
           </div>
 
-          <div className="bg-card border border-border p-12 flex items-center justify-center min-h-[300px]">
-            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Executive Fleet
-            </span>
+          <div className="relative h-[400px] overflow-hidden border border-border">
+            <Image
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+              alt="Luxury car interior"
+              fill
+              className="object-cover"
+            />
+            {/* Subtle overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const regions = [
   "Oxfordshire",
   "Northamptonshire",
@@ -9,8 +11,18 @@ const regions = [
 
 export default function CoverageSection() {
   return (
-    <section id="coverage" className="py-24 border-t border-border bg-card">
-      <div className="container mx-auto px-6">
+    <section id="coverage" className="py-24 border-t border-border bg-card relative overflow-hidden">
+      {/* Background image - subtle */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80"
+          alt="Airport at night"
+          fill
+          className="object-cover opacity-10"
+        />
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl">
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
             Coverage
